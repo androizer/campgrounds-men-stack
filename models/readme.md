@@ -1,0 +1,1 @@
+# Models are splited by different files to reduce the app.js code. This is the nice convention to clean the code.

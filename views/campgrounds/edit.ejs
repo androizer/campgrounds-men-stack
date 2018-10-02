@@ -1,0 +1,32 @@
+<% include ..\partials\header.ejs %>
+
+<div class="container text-center">
+    <div class="row">
+        <h1>Edit <em><%= campground.name %></em></h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="name" name="updated[name]" value="<%= campground.name%>">                     
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="image url" name="updated[image]" value="<%= campground.image%>">                    
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="description" cols="30" rows="10" name="updated[description]"><%= campground.description %></textarea>
+                    <!-- <input class="form-control" type="text" placeholder="description" name="description">                     -->
+                </div>
+                <div class="form-group">
+                    <span class="row">
+                        <span class="col-lg-6">
+                            <button class="btn btn-success btn-block">Submit</button>
+                        </span>
+                        <span class="col-lg-6">
+                            <a class="btn btn-primary btn-block" href="./">Back</a>
+                        </span>
+                    </span>                                
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<% include ..\partials\footer.ejs %>
